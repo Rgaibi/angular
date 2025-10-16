@@ -1,0 +1,16 @@
+.child-card {
+  background-color: #e3f2fd; /* bleu clair */
+  border: 2px solid #2196F3;
+  border-radius: 12px;
+  padding: 20px;
+  width: 150px;
+  text-align: center;
+  color: #000;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.child-card button {
+  margin-top: 10px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
