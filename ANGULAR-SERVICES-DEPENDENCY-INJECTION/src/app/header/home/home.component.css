@@ -1,0 +1,26 @@
+.home-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 60px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #ffffff;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+/* Le hero prend plus de place à gauche */
+app-hero {
+  flex: 2;
+}
+
+/* La sidebar prend moins d’espace à droite */
+app-sidebar {
+  flex: 1;
+  align-self: stretch;
+}
+
+

@@ -1,0 +1,26 @@
+/* Main container */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;        /* Pour que le container occupe tout l'écran */
+  background: linear-gradient(135deg, #0f172a, #1e293b); /* Fond sombre dégradé */
+  color: #ffffff;           /* Couleur du texte par défaut */
+  font-family: 'Inter', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Si tu veux que le header reste en haut avec une petite ombre */
+app-header {
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+/* Responsive général */
+@media (max-width: 768px) {
+  .main-container {
+    padding: 0 10px;
+  }
+}
