@@ -1,4 +1,4 @@
-export class SubscribeSerice {
+export class SubscribeService {
   onSubscribeClicked() {
     //add user to database
     //send email with subscription details

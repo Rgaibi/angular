@@ -1,14 +1,18 @@
 import { Component } from '@angular/core';
-import { SubscribeSerice } from '../Services/subscribe.service';
+import { SubscribeService } from '../Services/subscribe.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
+  providers: [SubscribeService]
+
 })
 export class HeaderComponent {
 
   selectedTab: string = 'home';
+
+  constructor(private subService: SubscribeService) {}
 
   //When HOME Link is clicked
   HomeClicked(){
@@ -21,8 +25,8 @@ export class HeaderComponent {
   }
 
   onSubscribe() {
-    let subscribeService = new SubscribeSerice();
-    subscribeService.onSubscribeClicked();
+  
+    this.subService.onSubscribeClicked();
 
   }  
 }
