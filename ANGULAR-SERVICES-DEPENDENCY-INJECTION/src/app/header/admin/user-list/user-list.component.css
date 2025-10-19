@@ -1,0 +1,52 @@
+.admin-user-list {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0; /* fond gris clair */
+}
+
+.admin-user-detail {
+  display: flex;
+  gap: 15px;
+  background: white;
+  padding: 12px 15px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Nom bien visible */
+.admin-user-name {
+  font-weight: bold;
+  color: #222;
+  flex: 1;
+}
+
+/* Badges avec couleurs plus marquées */
+.admin-user-gender,
+.admin-user-subtype,
+.admin-user-active {
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Couleurs bien visibles */
+.admin-user-gender {
+  background-color: #2563eb; /* bleu */
+}
+
+.admin-user-subtype {
+  background-color: #f59e0b; /* orange */
+}
+
+.admin-user-active {
+  background-color: #16a34a; /* vert */
+}
+
+/* Variante pour inactif */
+.admin-user-active.inactive {
+  background-color: #dc2626; /* rouge */
+}

@@ -1,0 +1,68 @@
+.admin-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+.admin-add-user {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: white;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 400px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-add-user:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.admin-add-user input,
+.admin-add-user select {
+  padding: 10px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.admin-add-user input:focus,
+.admin-add-user select:focus {
+  border-color: #3b82f6;
+}
+
+.admin-button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 12px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.admin-button:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+}
+
+app-user-list {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 20px;
+}

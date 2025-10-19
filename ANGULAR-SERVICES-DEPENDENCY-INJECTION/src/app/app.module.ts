@@ -7,6 +7,9 @@ import { AdminComponent } from './header/admin/admin.component';
 import { HomeComponent } from './header/home/home.component';
 import { HeroComponent } from './header/home/hero/hero.component';
 import { SidebarComponent } from './header/home/sidebar/sidebar.component';
+import { UserListComponent } from './header/admin/user-list/user-list.component';
+import { FormsModule } from '@angular/forms';
+import { UserService } from './Services/user.service';
 
 @NgModule({
   declarations: [
@@ -15,12 +18,14 @@ import { SidebarComponent } from './header/home/sidebar/sidebar.component';
     AdminComponent,
     HomeComponent,
     HeroComponent,
-    SidebarComponent
+    SidebarComponent,
+    UserListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

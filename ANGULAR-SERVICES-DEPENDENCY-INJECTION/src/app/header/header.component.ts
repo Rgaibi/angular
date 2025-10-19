@@ -4,8 +4,8 @@ import { SubscribeService } from '../Services/subscribe.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css'],
-  providers: [SubscribeService]
+  styleUrls: ['./header.component.css']
+  
 
 })
 export class HeaderComponent {
