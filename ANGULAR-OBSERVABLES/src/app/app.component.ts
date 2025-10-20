@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
-import { from, fromEvent, Observable, of } from 'rxjs';
+import { filter, from, fromEvent, map, Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -30,7 +30,14 @@ export class AppComponent implements AfterViewInit{
   // });
 
   // myObservable = of(this.array1, this.array2, 30, 'hello', true);
-     myObservable = from(this.array1)
+     myObservable = from([2, 4, 6, 8, 10]);
+     transformedObs = this.myObservable.pipe(map((val) => {
+                      return val * 5;
+     }))
+
+     filteredObs = this.transformedObs.pipe(filter((val) => {
+                    return val % 4 === 0;
+     }))
 
 
   GetAsyncData() {
@@ -45,7 +52,7 @@ export class AppComponent implements AfterViewInit{
   //     alert('All the data is streamed')
   //   }
   // );
-    this.myObservable.subscribe({
+    this.filteredObs.subscribe({
       next: (val: any) => {
         this.data.push(val);
       },
