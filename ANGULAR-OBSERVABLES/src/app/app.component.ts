@@ -1,15 +1,20 @@
-import { Component } from '@angular/core';
-import { from, Observable, of } from 'rxjs';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { from, fromEvent, Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit{
   title = 'ANGULAR-OBSERVABLES';
 
   data: any[] = [];
+
+  @ViewChild('createbtn')
+  createBtn!: ElementRef
+
+  createBtnObs: any;
 
   array1 = [1, 2, 6, 4, 9];
   array2 = ['a', 'b', 'd', 'e', 'z'];
@@ -52,6 +57,25 @@ export class AppComponent {
       }
 
     })
+  }
+
+  buttonClicked() {
+    let count = 0
+    this.createBtnObs = fromEvent(this.createBtn.nativeElement, 'click')
+                        .subscribe((data) => {
+                          console.log(data);
+                          this.showItem(count++);
+                        });
+  }
+
+  ngAfterViewInit(): void {
+      this.buttonClicked();
+  }
+
+  showItem(val: number) {
+    let div = document.createElement('div');
+    div.innerText = 'Item' + val;
+    document.getElementById('cont')!.appendChild(div);
   }
 
 }
