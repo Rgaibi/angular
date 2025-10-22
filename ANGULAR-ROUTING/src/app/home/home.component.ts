@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  router: Router = inject(Router);
+  activeRoute: ActivatedRoute = inject(ActivatedRoute)
+  navigateToCourses() {
+    // this.router.navigate(['Courses'], {relativeTo: this.activeRoute});  // relative path
+    this.router.navigateByUrl('Courses'); //always absolute path
 
+
+  }
 }
