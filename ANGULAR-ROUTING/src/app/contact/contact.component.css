@@ -1,0 +1,14 @@
+.contact-page { padding:80px 20px; text-align:center; font-family:'Segoe UI',sans-serif; background:#fff; }
+.contact-page h1 { font-size:42px; margin-bottom:20px; }
+.contact-page p { font-size:16px; margin-bottom:30px; }
+
+.contact-form { max-width:600px; margin:auto; display:flex; flex-direction:column; gap:15px; }
+.contact-form input, .contact-form textarea {
+  padding:12px; border:1px solid #ccc; border-radius:6px; font-size:14px; width:100%;
+}
+.contact-form textarea { height:120px; resize:vertical; }
+.contact-form button {
+  padding:14px; background:#00bcd4; color:#fff; border:none; border-radius:6px;
+  font-weight:bold; cursor:pointer; transition:background 0.3s;
+}
+.contact-form button:hover { background:#00838f; }

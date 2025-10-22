@@ -1,0 +1,12 @@
+.about-page { padding:80px 20px; text-align:center; background:#f0f0f0; font-family:'Segoe UI',sans-serif; }
+.about-page h1 { font-size:42px; margin-bottom:20px; }
+.about-page p { max-width:700px; margin:auto; font-size:16px; margin-bottom:50px; }
+
+.values { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; }
+.value-card {
+  background:#fff; padding:25px 20px; border-radius:12px; width:250px;
+  box-shadow:0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+.value-card:hover { transform:translateY(-8px); }
+.value-card h3 { color:#00bcd4; margin-bottom:10px; }
