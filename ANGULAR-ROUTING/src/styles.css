@@ -1,1 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
+a.active {
+  color: #00bcd4;          /* couleur du lien actif */
+  font-weight: bold;        /* mettre en gras */
+  border-bottom: 2px solid #00bcd4; /* soulignement moderne */
+}
