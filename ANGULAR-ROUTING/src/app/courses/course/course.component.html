@@ -38,12 +38,16 @@
                 </div>
 
                 <div class="course-fake-rewiews">
-                    <h3>Ravi Kumar</h3>
+                    <h3>alice redureau</h3>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
                         incididunt ut labore et m veniam, quis nostrud exercitation ullamco laboris 
                         nisi ut aliquip ex ea commodo consequat.
                     </p>
+                </div>
+                <div class="prev-next-course">
+                    <button [routerLink]="'/Courses/Course/' + (selectedCourse.id-1)">Previous Course</button>
+                    <button [routerLink]="'/Courses/Course/' + (selectedCourse.id+1)">Next Course</button>
                 </div>
             </div>
         </div>
