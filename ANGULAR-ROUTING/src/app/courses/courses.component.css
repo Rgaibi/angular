@@ -1,12 +1,122 @@
-.courses-page { padding:80px 20px; text-align:center; background:#f9f9f9; font-family:'Segoe UI',sans-serif; }
-.courses-page h1 { font-size:42px; margin-bottom:20px; }
-.courses-page p { max-width:700px; margin:auto; margin-bottom:40px; font-size:16px; }
-
-.courses-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; }
-.course-card {
-  background:#fff; padding:25px 20px; border-radius:12px; width:250px;
-  box-shadow:0 6px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
+/* Container principal */
+.courses-page-main-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f8f9fa;
 }
-.course-card:hover { transform:translateY(-8px); box-shadow:0 12px 25px rgba(0,0,0,0.15); }
-.course-card h3 { color:#00bcd4; margin-bottom:10px; }
+
+/* Bannière */
+.courses-banner {
+  position: relative;
+  height: 200px;
+  /* background-image: url('assets/images/banner.jpg'); change avec ton image */
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+.courses-banner-layover {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+}
+
+.courses-banner-layover h1 {
+  color: #fff;
+  font-size: 1.8rem;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* Section de tous les cours */
+.courses-page-all-courses h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.courses-page-all-courses hr {
+  width: 60px;
+  border: 2px solid #007bff;
+  margin: 0 auto 30px auto;
+}
+
+/* Liste de cartes */
+.courses-page-course-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Carte individuelle */
+.course-card {
+  background-color: #fff;
+  width: 260px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Image du cours */
+.course-image img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+/* Titre */
+.course-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 10px;
+}
+
+/* Description */
+.course-desc {
+  font-size: 0.95rem;
+  margin: 0 10px 10px 10px;
+  color: #555;
+  min-height: 60px;
+}
+
+/* Prix et notes */
+.course-price-rating {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px 10px 10px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* Boutons */
+.course-action-buttons {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0 15px 0;
+}
+
+.btn {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 7px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}

@@ -1,25 +1,32 @@
-<section class="courses-page">
-  <div class="container">
-    <h1>Our Courses</h1>
-    <p>Discover our programs to boost your skills and career.</p>
-
-    <div class="courses-grid">
-      <div class="course-card">
-        <h3>Full Stack Development</h3>
-        <p>Build modern web applications from scratch.</p>
-      </div>
-      <div class="course-card">
-        <h3>Data Science & AI</h3>
-        <p>Analyze data and learn AI & machine learning.</p>
-      </div>
-      <div class="course-card">
-        <h3>Cloud Computing</h3>
-        <p>Master cloud platforms and deploy scalable apps.</p>
-      </div>
-      <div class="course-card">
-        <h3>Software Testing</h3>
-        <p>Learn QA, automated and manual testing.</p>
-      </div>
+<div class="courses-page-main-container">
+    <div class="courses-banner">
+        <div class="courses-banner-layover">
+            <h1>Empower your future with MyCompany high quality online coding classes.</h1>
+        </div>
     </div>
-  </div>
-</section>
+    <div class="courses-page-all-courses">
+        <h2>Choose the course best suits you</h2>
+        <hr>
+        <div class="courses-page-course-list">
+            <div class="course-card" *ngFor="let course of AllCourses">
+                <div class="course-image">
+                    <img [src]="course.image">
+                </div>
+                <div class="course-title">
+                    {{ course.title }}
+                </div>
+                <div class="course-desc">
+                    {{ course.desc.substring(0, 120) }}
+                </div>
+                <div class="course-price-rating">
+                    <div class="course-price"><b>PRICE:</b> {{ course.price | currency }}</div>
+                    <div class="course-rating"><b>RATINGS:</b> {{ course.rating }}</div>
+                </div>
+                <div class="course-action-buttons">
+                    <button class="btn">BUY NOW</button>
+                    <button class="btn" [routerLink]="'/Courses/Course' + course.id">DETAILS</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
