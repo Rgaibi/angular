@@ -6,6 +6,7 @@ import { ContactComponent } from './contact/contact.component';
 import { CoursesComponent } from './courses/courses.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CourseComponent } from './courses/course/course.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'Courses', children: [
     {path: 'Course/:id', component: CourseComponent }
   ]},
+  {path: 'Login', component: LoginComponent},
   {path: '**', component: NotFoundComponent}
 ];
 
