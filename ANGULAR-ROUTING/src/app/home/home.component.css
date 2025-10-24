@@ -61,3 +61,25 @@ body {margin:0; font-family: 'Segoe UI', sans-serif; color:#333;}
   .hero h1 { font-size:36px; }
   .services h2, .about-cta h2 { font-size:28px; }
 }
+
+input {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+.btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 6px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+

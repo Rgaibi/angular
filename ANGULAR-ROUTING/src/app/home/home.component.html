@@ -1,5 +1,9 @@
 <section class="hero">
   <div class="hero-container">
+    <input type="text" placeholder="Search..." #searchVar>
+    <button class="btn" (click)="onSearchClicked(searchVar.value)">Search Courses</button>
+
+
     <h1>Welcome to MyCompany</h1>
     <p>Empowering you with the skills and knowledge to succeed in the digital world.</p>
     <button class="btn-primary" (click)="navigateToCourses()">Explore Services</button>

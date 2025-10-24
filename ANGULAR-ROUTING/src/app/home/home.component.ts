@@ -12,7 +12,9 @@ export class HomeComponent {
   navigateToCourses() {
     // this.router.navigate(['Courses'], {relativeTo: this.activeRoute});  // relative path
     this.router.navigateByUrl('Courses'); //always absolute path
+  }
 
-
+  onSearchClicked(value: string) {
+    this.router.navigate(['/Courses'], {queryParams: {search: value}})
   }
 }
