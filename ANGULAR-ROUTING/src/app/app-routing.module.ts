@@ -8,7 +8,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { CourseComponent } from './courses/course/course.component';
 import { LoginComponent } from './login/login.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-import { CanActivate } from './auth.guard';
+import { CanActivate, CanActivateChild } from './auth.guard';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -17,9 +17,9 @@ const routes: Routes = [
   {path: 'Contact', component: ContactComponent},
   {path: 'Courses', component: CoursesComponent},
   // {path: 'Courses/Course/:id', component: CourseComponent},
-  {path: 'Courses', children: [
+  {path: 'Courses', canActivateChild: [CanActivateChild], children: [
     {path: 'Course/:id', component: CourseComponent },
-    {path: 'Checkout', component: CheckoutComponent, canActivate: [CanActivate] }
+    // {path: 'Checkout', component: CheckoutComponent, canActivate: [CanActivate] }
   ]},
   {path: 'Login', component: LoginComponent},
   {path: '**', component: NotFoundComponent}

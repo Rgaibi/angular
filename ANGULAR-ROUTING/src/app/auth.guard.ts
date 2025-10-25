@@ -10,5 +10,10 @@ export const CanActivate = () => {
     }else{
         router.navigate(['/Login']);
         return false;
-    }    
+    }
+    
+}
+
+export const CanActivateChild = () => {
+    return CanActivate();
 }
