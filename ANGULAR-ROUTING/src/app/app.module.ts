@@ -13,6 +13,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { CourseComponent } from './courses/course/course.component';
 import { LoginComponent } from './login/login.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,10 +28,12 @@ import { CheckoutComponent } from './checkout/checkout.component';
     CourseComponent,
     LoginComponent,
     CheckoutComponent
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,11 +4,18 @@
     <p>We’d love to hear from you! Reach us or fill the form below.</p>
 
     <form class="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
+      <input type="text" placeholder="Your Name" required [(ngModel)]="firstName">
+      <input type="email" placeholder="Your Email" required [(ngModel)]="email">
       <input type="text" placeholder="Subject" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
+
+      <label for="country">Country</label>
+      <select id="country" name="country"  [(ngModel)]="country">
+        <option value="australia">Australia</option>
+        <option value="canada">Canada</option>
+        <option value="usa">France</option>
+      </select>      
+      <textarea placeholder="Your Message" required [(ngModel)]="message"></textarea>
+      <button type="submit"  (click)="OnSubmit()">Send Message</button>
     </form>
   </div>
 </section>
