@@ -20,7 +20,10 @@ export class CoursesComponent implements OnInit {
         this.searchString = data.get('search') ?? '';
 
         if(this.searchString === '' ) {
-        this.AllCourses = this.coursesService.courses;
+        // this.coursesService.getAllcourses().subscribe((data) => {
+        //   this.AllCourses = data;
+        // });
+        this.AllCourses = this.activateRoute.snapshot.data['courses'];
         }
         else {
           this.AllCourses = this.coursesService.courses
