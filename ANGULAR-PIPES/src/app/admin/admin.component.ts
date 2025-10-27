@@ -35,9 +35,13 @@ export class AdminComponent implements OnInit {
   @ViewChild('editFee') editFee!: ElementRef;
 
   ngOnInit(){
-    this.students = this.studentService.students;
+    this.students = this.studentService.filterStudentByGender(this.filterText);
     this.totalMarks = this.studentService.totalMarks;
   }
+
+onFilterValueChanged(selectedValue: string) {
+  this.students = this.studentService.filterStudentByGender(selectedValue);
+}
 
   OnInsertClicked(){
     this.isInserting = true;

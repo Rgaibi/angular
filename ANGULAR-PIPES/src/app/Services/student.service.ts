@@ -22,4 +22,15 @@ export class StudentService {
         let student = new Student(id, name, gender, dob, course, marks, fee);
         this.students.push(student);
     }
+
+    filterStudentByGender(filterBy: string) {
+    if( filterBy === 'All' || filterBy === '' || this.students.length === 0) {
+      return this.students;
+    }
+    else {
+      return this.students.filter((std) => {
+        return std.gender === filterBy;
+      })
+    }
+    }
 }
