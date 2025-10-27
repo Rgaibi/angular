@@ -1,0 +1,172 @@
+/* ====== CONTENEUR PRINCIPAL ====== */
+.main-admin-container {
+  width: 95%;
+  margin: 30px auto;
+  background-color: #f0f2f5;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ====== EN-TÊTE ====== */
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3f51b5;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+}
+
+.admin-header-title h2 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.filter-select {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+}
+
+/* ====== CONTENU / TABLE ====== */
+.admin-content {
+  margin-top: 25px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  text-align: center;
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #3f51b5;
+  color: white;
+  font-weight: 600;
+}
+
+tr:hover {
+  background-color: #e8eaf6;
+}
+
+/* ====== CHAMPS INPUT / SELECT ====== */
+input[type="text"],
+input[type="date"],
+input[type="number"],
+.select-gender-course {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: 0.2s;
+}
+
+input:focus,
+.select-gender-course:focus {
+  border-color: #3f51b5;
+  box-shadow: 0 0 3px rgba(63,81,181,0.3);
+}
+
+/* ====== BOUTONS ====== */
+button {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ajout de texte via ::after pour expliquer le bouton */
+.insert-button::after { content: " Add"; margin-left: 5px; }
+.edit-button::after { content: " Edit"; margin-left: 5px; }
+.delete-button::after { content: " Delete"; margin-left: 5px; }
+.save-button::after { content: " Save"; margin-left: 5px; }
+.cancel-button::after { content: " Cancel"; margin-left: 5px; }
+
+/* Couleurs boutons */
+.insert-button {
+  background-color: #2e7d32;
+  color: white;
+}
+.insert-button:hover {
+  background-color: #1b5e20;
+}
+
+.edit-button {
+  background-color: #fbc02d;
+  color: #000;
+}
+.edit-button:hover {
+  background-color: #f9a825;
+}
+
+.delete-button {
+  background-color: #d32f2f;
+  color: white;
+}
+.delete-button:hover {
+  background-color: #b71c1c;
+}
+
+.save-button {
+  background-color: #1976d2;
+  color: white;
+}
+.save-button:hover {
+  background-color: #0d47a1;
+}
+
+.cancel-button {
+  background-color: #757575;
+  color: white;
+}
+.cancel-button:hover {
+  background-color: #5f5f5f;
+}
+
+/* ====== PIED DE PAGE ====== */
+.admin-footer {
+  text-align: center;
+  color: #555;
+  font-size: 0.9rem;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  .admin-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  th, td {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+
+  button {
+    font-size: 0.8rem;
+    padding: 5px 8px;
+  }
+}
