@@ -16,6 +16,7 @@ export class AdminComponent implements OnInit {
 
   students!: Student[];
   totalMarks!: number;
+  filterText: string = 'All';
   
   //PROPERTIES FOR INSERTING
   @ViewChild('name') Name!: ElementRef;
