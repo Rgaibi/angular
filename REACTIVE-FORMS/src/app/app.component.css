@@ -122,10 +122,7 @@ input.ng-invalid.ng-touched{
   border: red 2px solid;
 }
 
-small{
-  color: red;
-  font-weight: bold;
-}
+
 
 .btn-gen-username{
   margin: 10px 0px;
@@ -201,4 +198,9 @@ input.ng-pending{
 
 input.ng-invalid.ng-touched {
   border: 2px solid red;
+}
+
+small{
+  color: red;
+  font-weight: bold;
 }
