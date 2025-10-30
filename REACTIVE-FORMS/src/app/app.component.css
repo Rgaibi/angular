@@ -182,19 +182,13 @@ span{
 }
 
 
-input.ng-pending{
-  border: yellow 2px solid;
-}
-
 .container.VALID{
   border: green 3px solid;
 }
 .container.INVALID{
   border: red 3px solid;
 }
-.container.PENDING{
-  border: orange 3px solid;
-}
+
 
 input.ng-invalid.ng-touched {
   border: 2px solid red;
@@ -203,4 +197,8 @@ input.ng-invalid.ng-touched {
 small{
   color: red;
   font-weight: bold;
+}
+
+input.ng-pending{
+  border: yellow 2px solid;
 }
