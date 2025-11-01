@@ -29,7 +29,7 @@ export class DashboardComponent implements OnInit {
   createTask(data: Task) {
     this.http.post<{name: string}>('https://angular-http-261d5-default-rtdb.firebaseio.com/tasks.json', data, {headers: { myHeader: 'hello'}}).subscribe((response) => {
       console.log(data);
-      // this.fetchAllTasks()
+      this.fetchAllTasks()
     })
   }
 
@@ -60,6 +60,18 @@ export class DashboardComponent implements OnInit {
     //   console.log(tasks);
     // });    
 
+  }
+
+  deleteTask(id?: string) {
+    this.http.delete('https://angular-http-261d5-default-rtdb.firebaseio.com/tasks/' + id +'.json').subscribe((res) => {
+      this.fetchAllTasks()
+    })
+  }
+
+  deleteAllTasks() {
+    this.http.delete('https://angular-http-261d5-default-rtdb.firebaseio.com/tasks.json').subscribe((res) => {
+      this.fetchAllTasks()
+    })
   }
 
 
