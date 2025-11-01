@@ -10,6 +10,7 @@ import { map } from 'rxjs';
 })
 export class DashboardComponent implements OnInit {
   showCreateTaskForm: boolean = false;
+  allTasks: Task[] = []
 
   http: HttpClient = inject(HttpClient);
 
@@ -27,8 +28,13 @@ export class DashboardComponent implements OnInit {
 
   createTask(data: Task) {
     this.http.post<{name: string}>('https://angular-http-261d5-default-rtdb.firebaseio.com/tasks.json', data, {headers: { myHeader: 'hello'}}).subscribe((response) => {
-      console.log(data)
+      console.log(data);
+      // this.fetchAllTasks()
     })
+  }
+
+  fetchAllTasksClicked() {
+    this.fetchAllTasks()
   }
 
   private fetchAllTasks() {
@@ -39,8 +45,22 @@ export class DashboardComponent implements OnInit {
         tasks.push({...response[key], id: key})
       }
       return tasks;
-    })).subscribe((response) => {
-      console.log(response);
+    })).subscribe((tasks) => {
+      this.allTasks = tasks;
+      console.log(tasks)
     });
+
+    // this.http.get('…/tasks.json').subscribe(response => {
+    //   const tasks = [];
+    //   for (let key in response) {
+    //     if (response.hasOwnProperty(key)) {
+    //       tasks.push({ ...response[key], id: key });
+    //     }
+    //   }
+    //   console.log(tasks);
+    // });    
+
   }
+
+
 }
