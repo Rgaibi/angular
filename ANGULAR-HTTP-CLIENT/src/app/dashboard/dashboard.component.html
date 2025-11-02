@@ -1,4 +1,4 @@
-<app-create-task *ngIf="showCreateTaskForm" (CloseForm)="CloseCreateTaskForm()" (emitTaskData)="createTask($event)" [isEditMode]="editMode" [selectedTask]="selectedTask"></app-create-task>
+<app-create-task *ngIf="showCreateTaskForm" (CloseForm)="CloseCreateTaskForm()" (emitTaskData)="createOrUpdateTask($event)" [isEditMode]="editMode" [selectedTask]="selectedTask"></app-create-task>
 
 <div class="dashboard-container">
     <div style="display: flex;">

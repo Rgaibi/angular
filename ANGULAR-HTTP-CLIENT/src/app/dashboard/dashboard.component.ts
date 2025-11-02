@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, isDevMode, OnInit } from '@angular/core';
 import { Task } from '../model/task';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs';
@@ -13,6 +13,7 @@ export class DashboardComponent implements OnInit {
   showCreateTaskForm: boolean = false;
   allTasks: Task[] = []
   http: HttpClient = inject(HttpClient);
+  currentTaskId: string = ''
   taskService: TaskService = inject(TaskService)
   editMode: boolean = false;
   selectedTask!: Task;
@@ -31,8 +32,15 @@ export class DashboardComponent implements OnInit {
     this.showCreateTaskForm = false;
   }
 
-  createTask(data: Task) {
-    this.taskService.createTask(data)
+  createOrUpdateTask(data: Task) {
+    if(!this.editMode) {
+      this.taskService.createTask(data)
+    }
+    else {
+      this.taskService.updateTask(this.currentTaskId, data)
+    }
+    
+  
   }
 
   fetchAllTasksClicked() {
@@ -65,6 +73,7 @@ export class DashboardComponent implements OnInit {
   }
 
   onEditTaskclicked(id?: string) {
+      this.currentTaskId = id!;
       this.showCreateTaskForm = true;
       this.editMode = true;
       this.selectedTask = this.allTasks.find((task) => {

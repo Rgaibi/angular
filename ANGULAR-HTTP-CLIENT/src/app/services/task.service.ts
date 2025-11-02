@@ -34,5 +34,9 @@ export class TaskService {
         return tasks;
       }))
     }
+
+    updateTask(id: string, data: Task) {
+      return this.http.put('https://angular-http-261d5-default-rtdb.firebaseio.com/tasks/' + id +'.json', data).subscribe()
+    }
 }
 
