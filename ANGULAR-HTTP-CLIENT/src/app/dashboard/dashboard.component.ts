@@ -19,6 +19,8 @@ export class DashboardComponent implements OnInit {
   selectedTask!: Task;
   isLoading: boolean = false
   errorMessage: string | null = null;
+  showTaskDetails: boolean = false;
+  currentTask : Task | null = null
 
   ngOnInit(): void {
       this.fetchAllTasks();
@@ -28,6 +30,17 @@ export class DashboardComponent implements OnInit {
     this.showCreateTaskForm = true;
     this.editMode = false;
     this.selectedTask = {title: '', description: '', assignedTo: '', createdAt: '', priority: '', status: ''}
+  }
+
+  showCurrentCreateTaskForm(id?: string ) {
+    this.showTaskDetails = true;
+    this.taskService.getTaskDetails(id).subscribe({next : (data: Task ) => {
+      this.currentTask = data;
+    } })
+  }
+
+  closeTaskDetails() {
+    this.showTaskDetails = false;
   }
 
   CloseCreateTaskForm(){

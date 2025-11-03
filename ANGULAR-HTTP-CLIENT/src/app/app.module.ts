@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { CreateTaskComponent } from './dashboard/create-task/create-task.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { TaskDetailsComponent } from './dashboard/task-details/task-details.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     DashboardComponent,
     FooterComponent,
     HeaderComponent,
-    CreateTaskComponent
+    CreateTaskComponent,
+    TaskDetailsComponent
   ],
   imports: [
     BrowserModule,

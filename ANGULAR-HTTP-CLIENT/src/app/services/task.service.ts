@@ -63,5 +63,14 @@ export class TaskService {
         return throwError(() => err)
       })).subscribe()
     }
+
+    getTaskDetails (id: string | undefined) {
+      return this.http.get<Task>('https://angular-http-261d5-default-rtdb.firebaseio.com/tasks/' + id +'.json').pipe(map((response) => {
+        let task = {};
+        task = {...response, id}
+        return task as Task
+
+      }))
+    }
 }
 
