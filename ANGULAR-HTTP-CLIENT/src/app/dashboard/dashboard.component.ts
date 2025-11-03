@@ -1,6 +1,6 @@
 import { Component, inject, isDevMode, OnInit } from '@angular/core';
 import { Task } from '../model/task';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { map } from 'rxjs';
 import { TaskService } from '../services/task.service';
 
@@ -18,6 +18,7 @@ export class DashboardComponent implements OnInit {
   editMode: boolean = false;
   selectedTask!: Task;
   isLoading: boolean = false
+  errorMessage: string | null = null;
 
   ngOnInit(): void {
       this.fetchAllTasks();
@@ -50,22 +51,24 @@ export class DashboardComponent implements OnInit {
 
   private fetchAllTasks() {
     this.isLoading = true;
-    this.taskService.getAllTasks().subscribe((tasks) => {
+    this.taskService.getAllTasks().subscribe({next: (tasks) => {
       this.allTasks = tasks;
       this.isLoading = false;
 
-    })
+    }, 
+    error: (error) => {
+      this.setErrorMessage(error);
+      this.isLoading = false;
 
-    // this.http.get('…/tasks.json').subscribe(response => {
-    //   const tasks = [];
-    //   for (let key in response) {
-    //     if (response.hasOwnProperty(key)) {
-    //       tasks.push({ ...response[key], id: key });
-    //     }
-    //   }
-    //   console.log(tasks);
-    // });    
+    }
+  })
 
+  }
+
+  private setErrorMessage(err: HttpErrorResponse) {
+    if(err.error.error === 'Permission denied') {
+      this.errorMessage = 'You do not have permission to access'
+    }
   }
 
   deleteTask(id?: string) {

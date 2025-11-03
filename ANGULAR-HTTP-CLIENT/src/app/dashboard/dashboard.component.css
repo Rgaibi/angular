@@ -144,3 +144,38 @@ i{
   0% { transform: translate(-50%, -50%) rotate(0deg); }
   100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
+
+
+.error-box {
+  position: fixed;          /* toujours visible à l'écran */
+  top: 50%;                 /* centre verticalement */
+  left: 50%;                /* centre horizontalement */
+  transform: translate(-50%, -50%); /* ajuste pour un vrai centrage */
+  
+  background-color: #f8d7da;  /* rouge clair */
+  color: #842029;             /* texte rouge foncé */
+  border: 1px solid #f5c2c7; /* bordure rouge clair */
+  
+  padding: 20px 30px;        /* espace à l'intérieur */
+  border-radius: 10px;       /* coins arrondis */
+  
+  font-weight: 600;
+  font-family: 'Arial', sans-serif;
+  font-size: 1.2rem;
+  
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* effet léger de profondeur */
+  text-align: center;
+
+  z-index: 1000;             /* toujours au-dessus des autres éléments */
+  
+  animation: fadeInOut 4s forwards; /* apparence/disparition animée */
+}
+
+/* Animation fade in / fade out */
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
