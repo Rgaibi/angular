@@ -17,6 +17,7 @@ export class DashboardComponent implements OnInit {
   taskService: TaskService = inject(TaskService)
   editMode: boolean = false;
   selectedTask!: Task;
+  isLoading: boolean = false
 
   ngOnInit(): void {
       this.fetchAllTasks();
@@ -48,8 +49,11 @@ export class DashboardComponent implements OnInit {
   }
 
   private fetchAllTasks() {
+    this.isLoading = true;
     this.taskService.getAllTasks().subscribe((tasks) => {
-      this.allTasks = tasks
+      this.allTasks = tasks;
+      this.isLoading = false;
+
     })
 
     // this.http.get('…/tasks.json').subscribe(response => {

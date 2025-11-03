@@ -119,3 +119,28 @@ i{
     from {top: 30px; opacity: 1;}
     to {top: 0; opacity: 0;}
   }
+
+
+  .loader {
+  position: fixed; /* reste centré même si on scroll */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border: 6px solid #f3f3f3; /* Couleur de fond */
+  border-top: 6px solid #3498db; /* Couleur de la partie animée */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+
+  animation: spin 1s linear infinite;
+
+  /* optionnel : un peu de transparence derrière */
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 9999; /* au-dessus de tout */
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
