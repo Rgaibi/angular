@@ -49,7 +49,7 @@ export class TaskService {
       let queryParams = new HttpParams()
       queryParams = queryParams.set('page', 2)
 
-      return this.http.get<{[key: string]: Task}>('https://angular-http-261d5-default-rtdb.firebaseio.com/tasks.json', { headers: headers, params: queryParams}).pipe(map((response) => {
+      return this.http.get<{[key: string]: Task}>('https://angular-http-261d5-default-rtdb.firebaseio.com/tasks.json', { headers: headers, params: queryParams, observe: 'body'}).pipe(map((response) => {
         let tasks = [];
         for(let key in response) {
           if(response.hasOwnProperty(key))
