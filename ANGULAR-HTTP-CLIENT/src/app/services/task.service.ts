@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Task } from '../model/task';
 import { catchError, map, throwError } from 'rxjs';
@@ -45,8 +45,11 @@ export class TaskService {
       let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*'
-    })
-      return this.http.get<{[key: string]: Task}>('https://angular-http-261d5-default-rtdb.firebaseio.com/tasks.json', { headers: headers}).pipe(map((response) => {
+      })
+      let queryParams = new HttpParams()
+      queryParams = queryParams.set('page', 2)
+
+      return this.http.get<{[key: string]: Task}>('https://angular-http-261d5-default-rtdb.firebaseio.com/tasks.json', { headers: headers, params: queryParams}).pipe(map((response) => {
         let tasks = [];
         for(let key in response) {
           if(response.hasOwnProperty(key))
