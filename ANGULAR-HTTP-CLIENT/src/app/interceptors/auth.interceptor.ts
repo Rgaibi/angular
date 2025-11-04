@@ -3,16 +3,22 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor,
+  HttpEventType
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
-  constructor() {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    return next.handle(request);
+    const modifiedReq = request.clone({headers: request.headers.append('auth', 'azert')})
+    return next.handle(modifiedReq).pipe(tap((event) => {  
+            if(event.type === HttpEventType.Response){
+                console.log('Response has arrived. Response data: ');
+                console.log(event.body)
+            }
+        }));
   }
 }
