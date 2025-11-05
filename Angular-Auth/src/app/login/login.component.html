@@ -7,7 +7,7 @@
         </div>
         <div class="form-input">
             <label>Password</label>
-            <input type="password" placeholder="Password" name="Password" ngModel required minlength="8">
+            <input type="password" placeholder="Password" name="password" ngModel required minlength="8">
         </div>           
         <button type="submit" class="app-login-btn" [disabled]="authForm.invalid">{{ isLoginMode ? 'Login' : 'SignUp'}}</button>
         <p>{{ isLoginMode ? 'Do not have an accout yet? ' : 'Already have an account?'}}

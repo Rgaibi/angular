@@ -11,7 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { CreateTaskComponent } from './dashboard/create-task/create-task.component';
 import { TaskDetailsComponent } from './dashboard/task-details/task-details.component';
 import { FormsModule } from '@angular/forms';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './services-interceptors/auth.interceptor';
 import { LoggingInterceptor } from './services-interceptors/logging.interceptor';
 
@@ -29,7 +29,9 @@ import { LoggingInterceptor } from './services-interceptors/logging.interceptor'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
+    
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
